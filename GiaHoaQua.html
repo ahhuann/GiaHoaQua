@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>GIÁ HOA QUẢ</h1>
+
+    <label for="fruit">Chọn loại hoa quả:</label>
+    <select id="fruit">
+        <option value="oi">Ổi</option>
+        <option value="duahau">Dưa Hấu</option>
+        <option value="tao">Táo</option>
+        <option value="xoai">Xoài</option>
+        <option value="cam">Cam</option>
+        <option value="chomchom">Chôm Chôm</option>
+        <option value="mangcut">Măng Cụt</option>
+    </select>
+
+    <button onclick="lookupPrice()">Xem Giá</button>
+
+    <div id="result"></div>
+    <script>
+        function lookupPrice() {
+            const fruit = document.getElementById("fruit").value;
+            let price;
+
+            switch (fruit) {
+                case "oi":
+                case "duahau":
+                    price = 20000;
+                    break;
+                case "tao":
+                case "xoai":
+                    price = 30000;
+                    break;
+                case "cam":
+                case "chomchom":
+                    price = 40000;
+                    break;
+                case "mangcut":
+                    price = 50000;
+                    break;
+                default:
+                    price = "Không tìm thấy giá của loại hoa quả này.";
+            }
+
+            document.getElementById("result").innerHTML = `${price} VNĐ/kg.`;
+        }
+    </script>
+</body>
+
+</html>
